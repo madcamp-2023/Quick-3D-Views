@@ -3,7 +3,7 @@ import React, { Suspense, useCallback, useMemo, useRef } from "react";
 
 import * as THREE from "three";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import circleImg from "./assets/circle.png";
+// import circleImg from "./assets/circle.png";
 
 import "./App.css";
 
