@@ -4,11 +4,12 @@ import React, { Suspense, useCallback, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import circleImg from "./assets/circle.png";
+import flowerImg from "./assets/flower.png";
 
 import "./App.css";
 
 function Points() {
-  const imgTex = useLoader(THREE.TextureLoader, circleImg);
+  const imgTex = useLoader(THREE.TextureLoader, flowerImg);
 
   const bufferRef = useRef<THREE.BufferAttribute | null>(null);
 
@@ -22,6 +23,19 @@ function Points() {
     },
     [t, f, a]
   );
+
+  // const graph = useCallback(
+  //   (x: number, z: number) => {
+  //     // 꽃잎이 회전하는 듯한 움직임을 추가하기 위한 변수
+  //     const wave = Math.sin(f * (x ** 2 + z ** 2) + t);
+  
+  //     // y 좌표는 시간에 따라 천천히 감소하도록 설정
+  //     const y = wave * a - t * 0.1;
+  
+  //     return y;
+  //   },
+  //   [t, f, a]
+  // );
 
   const count = 100;
   const sep = 3;
