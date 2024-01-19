@@ -1,6 +1,5 @@
 // App.tsx
 import React, { Suspense } from "react";
-
 import { RippleAnimation } from "./lib";
 import "./App.css";
 
