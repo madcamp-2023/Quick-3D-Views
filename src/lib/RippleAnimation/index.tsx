@@ -1,16 +1,16 @@
 // App.tsx
 import React, { Suspense } from "react";
-import { RippleAnimation } from "./lib";
-import "./App.css";
 
-const App: React.FC = () => {
+import AnimationCanvas from "./AnimationCanvas";
+
+const RippleAnimation: React.FC = () => {
   return (
     <div className="anim">
       <Suspense fallback={<div>Loading...</div>}>
-        <RippleAnimation />
+        <AnimationCanvas />
       </Suspense>
     </div>
   );
 };
 
-export default App;
+export default RippleAnimation;
