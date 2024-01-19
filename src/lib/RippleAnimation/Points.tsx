@@ -2,9 +2,10 @@ import React, { useCallback, useMemo, useRef } from "react";
 import * as THREE from "three";
 
 import { useFrame, useLoader } from "@react-three/fiber";
+import circleImg from "../../assets/circle.png";
 
 const Points: React.FC = () => {
-  //   const imgTex = useLoader(THREE.TextureLoader, circleImg);
+  const imgTex = useLoader(THREE.TextureLoader, circleImg);
 
   const bufferRef = useRef<THREE.BufferAttribute | null>(null);
 
@@ -75,7 +76,7 @@ const Points: React.FC = () => {
       </bufferGeometry>
       <pointsMaterial
         attach="material"
-        // map={imgTex}
+        map={imgTex}
         color={0x00aaff}
         size={0.5}
         sizeAttenuation
