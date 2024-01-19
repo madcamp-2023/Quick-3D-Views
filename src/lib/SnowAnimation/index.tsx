@@ -1,16 +1,16 @@
 // App.tsx
 import React, { Suspense } from "react";
-import "./App.css";
-import { RainAnimation } from "./lib";
 
-const App: React.FC = () => {
+import AnimationCanvas from "./AnimationCanvas";
+
+const SnowAnimation: React.FC = () => {
   return (
     <div className="anim">
       <Suspense fallback={<div>Loading...</div>}>
-        <RainAnimation />
+        <AnimationCanvas />
       </Suspense>
     </div>
   );
 };
 
-export default App;
+export default SnowAnimation;
