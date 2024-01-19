@@ -1,7 +1,8 @@
 {
-  "name": "w4-f",
-  "private": true,
-  "version": "0.0.0",
+  "name": "quick-3d-views",
+  "version": "0.1.0",
+  "description": "Quick-3D-Views npm package",
+  "main": "./src/main.tsx",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +10,17 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madcamp-2023/Quick-3D-Views.git"
+  },
+  "author": "haejunejung&Yeongjae-Kong",
+  "license": "MIT",
+  "homepage": "https://github.com/madcamp-2023/Quick-3D-Views",
+  "keywords": [
+    "3D background",
+    "3D animation"
+  ],
   "dependencies": {
     "@react-three/drei": "^9.95.0",
     "@react-three/fiber": "^8.15.14",
