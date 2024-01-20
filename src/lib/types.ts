@@ -39,3 +39,19 @@ export declare type ItemProps = {
   bufferAttributeProps: BufferAttributeProps;
   pointProps: PointsMaterialProps;
 };
+
+export declare type RippleAnimationProps = {
+  animationSetteings?: {
+    animationTime: number;
+    frequency: number;
+    amplitude: number;
+  };
+  pointsConfig?: {
+    count: number;
+    sep: number;
+  };
+  bufferGeometryProps?: BufferGeometryProps;
+  bufferAttributeProps?: BufferAttributeProps;
+  pointProps?: PointsMaterialProps;
+  imgSrc?: string;
+};
