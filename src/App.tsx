@@ -1,13 +1,14 @@
 // App.tsx
 import React, { Suspense } from "react";
+import { Summer } from "./lib";
+
 import "./App.css";
-import { RainAnimation } from "./lib";
 
 const App: React.FC = () => {
   return (
     <div className="anim">
       <Suspense fallback={<div>Loading...</div>}>
-        <RainAnimation />
+        <Summer />
       </Suspense>
     </div>
   );
