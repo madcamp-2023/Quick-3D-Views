@@ -1,6 +1,7 @@
 // App.tsx
 import React, { Suspense } from "react";
-import { Summer, Winter } from "./lib";
+
+import { Winter } from "./lib";
 
 import "./App.css";
 
