@@ -9,7 +9,7 @@ import {
   useLoader,
 } from "@react-three/fiber";
 
-import waternormals from "/images/waternormals.jpeg";
+import waternormals from "../../../assets/images/waternormals.jpeg";
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace

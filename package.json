@@ -1,6 +1,6 @@
 {
   "name": "quick-3d-views",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Quick-3D-Views npm package",
   "main": "./src/main.tsx",
   "type": "module",
@@ -35,6 +35,7 @@
     "three-stdlib": "^2.29.4"
   },
   "devDependencies": {
+    "@types/node": "^20.11.5",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
