@@ -28,7 +28,7 @@ yarn add quick-3d-views
 ## Quick Start
 
 ```
-import { Spring, Summer, Autumn, Winter } from "quick-3d-views"
+import { Spring, Summer, Autumn, Winter } from "quick-3d-views/src/lib"
 ```
 
 ## Document
@@ -36,6 +36,10 @@ import { Spring, Summer, Autumn, Winter } from "quick-3d-views"
 ## Components Usage
 
 ![Quick3DViews-Chrome2024-01-2418-14-13-ezgif com-video-to-gif-converter](https://github.com/madcamp-2023/Quick-3D-Views/assets/99087502/d319f22d-c0b4-474b-92dc-d6edf7ea9433)
+
+![Quick3DViews-Chrome2024-01-2418-28-30-ezgif com-video-to-gif-converter](https://github.com/madcamp-2023/Quick-3D-Views/assets/99087502/f1d60e08-749e-4c5e-9e54-652294c09898)
+
+![Quick3DViews-Chrome2024-01-2501-49-46-ezgif com-video-to-gif-converter](https://github.com/madcamp-2023/Quick-3D-Views/assets/99087502/924ec272-e359-4ec8-afd9-e99a896d5c2f)
 
 <!-- PROJECT CONTRIBUTORS -->
 
@@ -65,3 +69,5 @@ import { Spring, Summer, Autumn, Winter } from "quick-3d-views"
 </table>
 
 ## License
+
+## Copyright
