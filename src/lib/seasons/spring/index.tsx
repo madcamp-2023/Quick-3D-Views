@@ -7,6 +7,7 @@ import { OrbitControls } from "@react-three/drei";
 import Model from "./Model";
 import Petals from "./Petals";
 
+import spring_bg from "../../../assets/spring_bg.jpg";
 
 function Light() {
   const ref = React.useRef<THREE.Group>(null);
@@ -36,7 +37,7 @@ function Rig() {
 }
 
 const Spring: React.FC<{ isDayTime?: boolean }> = ({ isDayTime = true }) => {
-  const bgTexture = useLoader(THREE.TextureLoader, "/spring_bg.jpg");
+  const bgTexture = useLoader(THREE.TextureLoader, spring_bg);
   return (
     <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 160], fov: 20 }}>
       <React.Suspense fallback={null}>

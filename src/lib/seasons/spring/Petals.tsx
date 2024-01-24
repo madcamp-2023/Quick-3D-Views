@@ -3,9 +3,10 @@ import * as THREE from "three";
 
 import { useFrame, useLoader } from "@react-three/fiber";
 
+import flower from "../../../assets/flower.png";
 
 const Petals: React.FC = () => {
-  const imgTex = useLoader(THREE.TextureLoader, "/flower.png");
+  const imgTex = useLoader(THREE.TextureLoader, flower);
   const petalsRef = React.useRef<THREE.BufferAttribute | null>(null);
 
   const count = 150;

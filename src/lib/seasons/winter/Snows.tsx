@@ -3,8 +3,10 @@ import * as THREE from "three";
 
 import { useFrame, useLoader } from "@react-three/fiber";
 
+import circle from "../../../assets/circle.png";
+
 const Snows: React.FC = () => {
-  const imgTex = useLoader(THREE.TextureLoader, "/circle.png");
+  const imgTex = useLoader(THREE.TextureLoader, circle);
 
   const bufferRef = React.useRef<THREE.BufferAttribute | null>(null);
 

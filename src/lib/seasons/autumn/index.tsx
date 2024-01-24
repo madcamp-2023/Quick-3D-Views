@@ -8,8 +8,10 @@ import { Physics } from "@react-three/cannon";
 import Pointer from "./Pointer";
 import Clump from "./Clump";
 
+import autumn_bg from "../../../assets/autumn_bg.jpg";
+
 const Autumn: React.FC = () => {
-  const bgTexture = useLoader(THREE.TextureLoader, "/autumn_bg.jpg");
+  const bgTexture = useLoader(THREE.TextureLoader, autumn_bg);
 
   return (
     <Canvas
