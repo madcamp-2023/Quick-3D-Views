@@ -20,7 +20,7 @@ const Autumn: React.FC = () => {
       dpr={[1, 1.5]}
       camera={{ position: [0, 0, 20], fov: 35, near: 1, far: 100 }}
     >
-      <React.Suspense fallback={<div>loading...</div>}>
+      <React.Suspense fallback={null}>
         <ambientLight intensity={0.5} />
         <spotLight
           intensity={1}
