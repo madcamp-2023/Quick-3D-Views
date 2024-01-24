@@ -54,13 +54,13 @@ const Spring: React.FC<{ isDayTime?: boolean }> = ({ isDayTime = true }) => {
         <Light />
         <Rig />
         <Petals />
-      </React.Suspense>
-      <OrbitControls makeDefault />
+        <OrbitControls makeDefault />
 
-      <mesh position={[0, 0, 0]}>
-        <planeGeometry args={[100, 100]} />
-        <meshBasicMaterial map={bgTexture} />
-      </mesh>
+        <mesh position={[0, 0, 0]}>
+          <planeGeometry args={[100, 100]} />
+          <meshBasicMaterial map={bgTexture} />
+        </mesh>
+      </React.Suspense>
     </Canvas>
   );
 };

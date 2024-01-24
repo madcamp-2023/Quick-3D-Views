@@ -20,26 +20,28 @@ const Autumn: React.FC = () => {
       dpr={[1, 1.5]}
       camera={{ position: [0, 0, 20], fov: 35, near: 1, far: 100 }}
     >
-      <ambientLight intensity={0.5} />
-      <spotLight
-        intensity={1}
-        angle={0.2}
-        penumbra={1}
-        position={[30, 30, 30]}
-        castShadow
-        shadow-mapSize={[512, 512]}
-      />
-      <Physics gravity={[0, 2, 0]} iterations={10}>
-        <Pointer />
-        <Clump />
-      </Physics>
-      <Environment files={"/leaves.hdr"} />
-      <OrbitControls minDistance={15} maxDistance={24} enableRotate={false} />
+      <React.Suspense fallback={<div>loading...</div>}>
+        <ambientLight intensity={0.5} />
+        <spotLight
+          intensity={1}
+          angle={0.2}
+          penumbra={1}
+          position={[30, 30, 30]}
+          castShadow
+          shadow-mapSize={[512, 512]}
+        />
+        <Physics gravity={[0, 2, 0]} iterations={10}>
+          <Pointer />
+          <Clump />
+        </Physics>
+        <Environment files={"/leaves.hdr"} />
+        <OrbitControls minDistance={15} maxDistance={24} enableRotate={false} />
 
-      <mesh position={[0, 0, 0]}>
-        <planeGeometry args={[100, 100]} />
-        <meshBasicMaterial map={bgTexture} />
-      </mesh>
+        <mesh position={[0, 0, 0]}>
+          <planeGeometry args={[100, 100]} />
+          <meshBasicMaterial map={bgTexture} />
+        </mesh>
+      </React.Suspense>
     </Canvas>
   );
 };
