@@ -5,14 +5,11 @@ import { Canvas, useLoader } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 
-import AutumnBg from "../../../assets/images/autumn_bg.jpg";
 import Pointer from "./Pointer";
 import Clump from "./Clump";
 
-import LeaveHDR from "../../../assets/hdrs/leaves.hdr";
-
 const Autumn: React.FC = () => {
-  const bgTexture = useLoader(THREE.TextureLoader, AutumnBg);
+  const bgTexture = useLoader(THREE.TextureLoader, "/autumn_bg.jpg");
 
   return (
     <Canvas
@@ -34,7 +31,7 @@ const Autumn: React.FC = () => {
         <Pointer />
         <Clump />
       </Physics>
-      <Environment files={LeaveHDR} />
+      <Environment files={"/leaves.hdr"} />
       <OrbitControls minDistance={15} maxDistance={24} enableRotate={false} />
 
       <mesh position={[0, 0, 0]}>

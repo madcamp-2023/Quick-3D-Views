@@ -9,8 +9,6 @@ import {
   useLoader,
 } from "@react-three/fiber";
 
-import waternormals from "../../../assets/images/waternormals.jpeg";
-
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
@@ -28,7 +26,7 @@ function Ocean() {
   const ref = React.useRef<Water>(null);
   const waterNormals = useLoader(
     THREE.TextureLoader,
-    waternormals
+    "/waternormals.jpeg"
   ) as THREE.Texture;
   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
 
