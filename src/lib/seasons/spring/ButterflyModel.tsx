@@ -3,26 +3,23 @@ import * as React from "react";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-import butterfly from "../../../assets/glbs/butterfly.glb?url";
-import butterfly2 from "../../../assets/glbs/butterfly2.glb?url";
-import butterfly3 from "../../../assets/glbs/butterfly3.glb?url";
 
 const ButterflyModel = () => {
   const {
     nodes: butterflyNodes,
     materials: butterflyMaterials,
     animations: butterflyAnimations,
-  } = useGLTF(butterfly);
+  } = useGLTF("/butterfly.glb");
   const {
     nodes: butterfly2Nodes,
     materials: butterfly2Materials,
     animations: butterfly2Animations,
-  } = useGLTF(butterfly2);
+  } = useGLTF("/butterfly2.glb");
   const {
     nodes: butterfly3Nodes,
     materials: butterfly3Materials,
     animations: butterfly3Animations,
-  } = useGLTF(butterfly3);
+  } = useGLTF("/butterfly3.glb");
 
   const { ref: butterflyRef, actions: butterflyActions } =
     useAnimations(butterflyAnimations);

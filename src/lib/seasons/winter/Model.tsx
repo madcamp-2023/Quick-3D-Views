@@ -3,12 +3,6 @@ import * as THREE from "three";
 
 import { useGLTF, Reflector } from "@react-three/drei";
 
-import snowman1 from "../../../assets/glbs/snowman1.glb?url";
-import snowman2 from "../../../assets/glbs/snowman2.glb?url";
-import snowman3 from "../../../assets/glbs/snowman3.glb?url";
-import olaffrozen from "../../../assets/glbs/olaffrozen.glb?url";
-import giftBox from "../../../assets/glbs/gift_box.glb?url";
-
 interface ModelProps {
   position?: [number, number, number];
   rotation?: [number, number, number];
@@ -20,11 +14,11 @@ interface ModelProps {
 export default function Model(props: ModelProps) {
   const { isDayTime } = props;
   const group = React.useRef<THREE.Group>(null);
-  const { nodes: snowman1Nodes } = useGLTF(snowman1);
-  const { nodes: snowman2Nodes } = useGLTF(snowman2);
-  const { nodes: snowman3Nodes } = useGLTF(snowman3);
-  const { nodes: olafNodes } = useGLTF(olaffrozen);
-  const { nodes: giftNodes } = useGLTF(giftBox);
+  const { nodes: snowman1Nodes } = useGLTF("/snowman1.glb");
+  const { nodes: snowman2Nodes } = useGLTF("/snowman2.glb");
+  const { nodes: snowman3Nodes } = useGLTF("/snowman3.glb");
+  const { nodes: olafNodes } = useGLTF("/olaffrozen.glb");
+  const { nodes: giftNodes } = useGLTF("/gift_box.glb");
 
   const material = React.useMemo(() => {
     new THREE.MeshPhysicalMaterial({
@@ -42,11 +36,11 @@ export default function Model(props: ModelProps) {
   const giftBoxModel = giftNodes.Sketchfab_Scene;
 
   React.useEffect(() => {
-    useGLTF.preload(snowman1);
-    useGLTF.preload(snowman2);
-    useGLTF.preload(snowman3);
-    useGLTF.preload(olaffrozen);
-    useGLTF.preload(giftBox);
+    // useGLTF.preload(snowman1);
+    // useGLTF.preload(snowman2);
+    // useGLTF.preload(snowman3);
+    // useGLTF.preload(olaffrozen);
+    // useGLTF.preload(giftBox);
   }, []);
 
   return (

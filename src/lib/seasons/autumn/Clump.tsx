@@ -4,8 +4,6 @@ import { useGLTF } from "@react-three/drei";
 import { useSphere } from "@react-three/cannon";
 import { useFrame } from "@react-three/fiber";
 
-import MapleTree from "../../../assets/glbs/autumn_maple.glb?url";
-
 const rfs = THREE.MathUtils.randFloatSpread;
 const baubleMaterial = new THREE.MeshStandardMaterial({
   color: "white",
@@ -30,7 +28,7 @@ const yellowMaterial = new THREE.MeshStandardMaterial({
 });
 
 const Clump = ({ mat = new THREE.Matrix4(), vec = new THREE.Vector3() }) => {
-  const { nodes: mapleTreeNodes } = useGLTF(MapleTree);
+  const { nodes: mapleTreeNodes } = useGLTF("/autumn_maple.glb");
 
   const orangeObject = mapleTreeNodes.orange_lambert12_0 as THREE.Mesh;
 

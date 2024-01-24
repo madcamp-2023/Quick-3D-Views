@@ -4,8 +4,6 @@ import * as THREE from "three";
 import { PrimitiveProps, useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 
-import flowers from "../../../assets/glbs/flowers.glb?url";
-
 interface PetalObjectProps extends Omit<PrimitiveProps, "object"> {
   object: THREE.Object3D;
 }
@@ -35,7 +33,7 @@ const PetalModel = () => {
     });
   }, []);
 
-  const { nodes: flowersNodes } = useGLTF(flowers);
+  const { nodes: flowersNodes } = useGLTF("/flowers.glb");
 
   // Refs and start times for each petal
   const petalRef1 = React.useRef<THREE.Object3D>(null);
@@ -85,7 +83,7 @@ const PetalModel = () => {
   });
 
   React.useEffect(() => {
-    useGLTF.preload(flowers);
+    // useGLTF.preload(flowers);
   }, []);
 
   return (
