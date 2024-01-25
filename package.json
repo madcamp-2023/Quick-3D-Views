@@ -1,6 +1,6 @@
 {
   "name": "quick-3d-views",
-  "version": "1.0.7",
+  "version": "1.1.6",
   "description": "Quick-3D-Views npm package",
   "main": "./src/main.tsx",
   "type": "module",
