@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as THREE from "three";
 
-import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
 import Model from "./Model";
@@ -37,7 +37,18 @@ function Rig() {
 }
 
 const Spring: React.FC<{ isDayTime?: boolean }> = ({ isDayTime = true }) => {
-  const bgTexture = useLoader(THREE.TextureLoader, spring_bg);
+  const [bgTexture, setBgTexture] = React.useState<THREE.Texture | null>(null);
+  const [textureLoading, setTextureLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    React.startTransition(() => {
+      new THREE.TextureLoader().load(spring_bg, (texture) => {
+        setBgTexture(texture);
+        setTextureLoading(false);
+      });
+    });
+  }, []);
+
   return (
     <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 160], fov: 20 }}>
       <React.Suspense fallback={null}>
@@ -56,10 +67,17 @@ const Spring: React.FC<{ isDayTime?: boolean }> = ({ isDayTime = true }) => {
         <Petals />
         <OrbitControls makeDefault />
 
-        <mesh position={[0, 0, 0]}>
-          <planeGeometry args={[100, 100]} />
-          <meshBasicMaterial map={bgTexture} />
-        </mesh>
+        {textureLoading ? (
+          <mesh>
+            <planeGeometry args={[100, 100]} />
+            <meshBasicMaterial color="gray" /> {/* 로딩 중 표시 */}
+          </mesh>
+        ) : (
+          <mesh position={[0, 0, 0]}>
+            <planeGeometry args={[100, 100]} />
+            {bgTexture && <meshBasicMaterial map={bgTexture} />}
+          </mesh>
+        )}
       </React.Suspense>
     </Canvas>
   );

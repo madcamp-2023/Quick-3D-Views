@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as THREE from "three";
 
-import { Canvas, useLoader } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 
@@ -11,7 +11,17 @@ import Clump from "./Clump";
 import autumn_bg from "../../../assets/autumn_bg.jpg";
 
 const Autumn: React.FC = () => {
-  const bgTexture = useLoader(THREE.TextureLoader, autumn_bg);
+  const [bgTexture, setBgTexture] = React.useState<THREE.Texture | null>(null);
+  const [textureLoading, setTextureLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    React.startTransition(() => {
+      new THREE.TextureLoader().load(autumn_bg, (texture) => {
+        setBgTexture(texture);
+        setTextureLoading(false);
+      });
+    });
+  }, []);
 
   return (
     <Canvas
@@ -37,10 +47,17 @@ const Autumn: React.FC = () => {
         <Environment files={"/leaves.hdr"} />
         <OrbitControls minDistance={15} maxDistance={24} enableRotate={false} />
 
-        <mesh position={[0, 0, 0]}>
-          <planeGeometry args={[100, 100]} />
-          <meshBasicMaterial map={bgTexture} />
-        </mesh>
+        {textureLoading ? (
+          <mesh>
+            <planeGeometry args={[100, 100]} />
+            <meshBasicMaterial color="gray" /> {/* 로딩 중 표시 */}
+          </mesh>
+        ) : (
+          <mesh position={[0, 0, 0]}>
+            <planeGeometry args={[100, 100]} />
+            {bgTexture && <meshBasicMaterial map={bgTexture} />}
+          </mesh>
+        )}
       </React.Suspense>
     </Canvas>
   );

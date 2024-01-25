@@ -2,7 +2,7 @@
 import React, { Suspense } from "react";
 
 import "./App.css";
-import { Autumn, Spring, Summer, Winter } from "./lib";
+import { Spring } from "./lib";
 
 const App: React.FC = () => {
   return (
