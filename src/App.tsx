@@ -2,13 +2,13 @@
 import React, { Suspense } from "react";
 
 import "./App.css";
-import { Autumn } from "./lib";
+import { Autumn, Spring, Summer, Winter } from "./lib";
 
 const App: React.FC = () => {
   return (
     <div className="anim">
       <Suspense fallback={<div>Loading...</div>}>
-        <Autumn />
+        <Spring />
       </Suspense>
     </div>
   );
